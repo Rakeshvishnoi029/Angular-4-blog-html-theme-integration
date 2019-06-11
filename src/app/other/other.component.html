@@ -1,0 +1,51 @@
+
+<div class="main">
+ 	 <h1> Item's List</h1>
+	<div class="addItem">
+		<input [(ngModel)] = "newItem" class="addText" placeholder="Item">
+		<button (click) = "pushItem()">Add</button>
+	</div>
+
+	<ul>
+		<li *ngFor = "let i of items; let ind = index"> {{i}} <span (click) = "removeItem(ind)">X</span> </li> 
+	</ul>
+	
+	
+<form class="" #userForm = "ngForm" (ngSubmit) = "onSubmit(userForm.value)">
+  First name:<br>
+  <input type="text" name="firstname1" ngModel>
+  Last name:<br>
+  <input type="text" name="lastname1" ngModel><br>
+  <input type="text" name="email1" ngModel><br>
+  <select name="language1" ngModel>
+	<option value="c"> C</option>
+	<option value="c++">C++</option>
+	<option value="PHP"> PHP </option>
+	<option value="Java"> Java </option>
+  </select>
+  <input type="submit" value="Submit">
+</form> 
+
+<br><br> <h1> Model Driven Form </h1>
+
+
+<!-- 
+<form class="form" [formGroup] = "form" (ngSubmit) = "onSubmit(form.value)">
+  First name:
+  <input type="text" name="firstname" formControlName="firstname"><br>
+  Last name:
+  <input type="text" name="lastname" formControlName="lastname"><br>
+  Email:
+  <input type="text" name="email" formControlName="email"><br>
+  Language: 
+  <select name="language" formControlName="language">
+	<option value="c"> C</option>
+	<option value="c++">C++</option>
+	<option value="PHP"> PHP </option>
+	<option value="Java"> Java </option>
+  </select><br>
+  <input type="submit" [disabled]="!form.valid" value="Submit">
+</form>  
+	 -->
+	
+</div> 
